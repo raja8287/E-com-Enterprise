@@ -1,5 +1,7 @@
+const { config } = require('dotenv');
 const mongoose=require('mongoose');
-const url="mongodb://localhost:27017/product";
+config({path:"./.env"})
+const url=process.env.con;
 mongoose.connect(url);
 
 const ProductSchema=new mongoose.Schema({
